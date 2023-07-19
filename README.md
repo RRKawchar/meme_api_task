@@ -2,15 +2,12 @@
 
 A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##  Output
+## Home Screen
+![Apple iPhone 11 Pro Max Presentation (2)](https://github.com/RRKawchar/meme_api_task/assets/97376140/7892d82d-d3c1-4cd7-814e-c3d132744044)
+## Search memes item
+![Apple iPhone 11 Pro Max Presentation (3)](https://github.com/RRKawchar/meme_api_task/assets/97376140/7f714bea-7ec0-4071-92ce-1966689bb2d5)
+## Details Screen
+![Apple iPhone 11 Pro Max Presentation (4)](https://github.com/RRKawchar/meme_api_task/assets/97376140/cb8e969d-cfa8-428c-83a0-b90347e57908)
+## Edit screen
+![Apple iPhone 11 Pro Max Presentation (5)](https://github.com/RRKawchar/meme_api_task/assets/97376140/2820766a-466b-4718-b237-bcc20ce6f59b)
