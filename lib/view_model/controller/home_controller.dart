@@ -13,17 +13,31 @@ class HomeController extends GetxController {
 
   RxList<Memes> searchMemeList = <Memes>[].obs;
 
+
   Future<void> getMemes() async {
-    isLoading.value = true;
     try {
-      final data = await _apiService.getMeme();
-      memesList.value = data;
-      isLoading.value = false;
+      isLoading.value = true;
+      dynamic responseBody = await ApiService.handleResponse(
+        await ApiService.getRequest(),
+      );
+      if (responseBody != null) {
+        memesList.value = [];
+        for (var meme in responseBody['data']['memes']) {
+          memesList.add(Memes.fromJson(meme));
+        }
+      } else {
+        isLoading.value = false;
+        throw 'Unable to load announcement list!';
+      }
     } catch (e) {
-      isLoading.value = false;
       print(e.toString());
+      isLoading.value = false;
+    } finally {
+      isLoading.value = false;
     }
   }
+
+
 
   void searchMemes(String value) {
     searchMemeList.value = memesList.where((meme) {
