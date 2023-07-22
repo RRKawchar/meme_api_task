@@ -1,23 +1,24 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:test_task/core/res/app_url.dart';
 import 'package:http/http.dart' as http;
+import 'package:test_task/core/res/utils.dart';
 
 class ApiService {
+
   static var noInternetMessage = "Please check your connection!";
 
-  static  getRequest() async {
-     final response =await http.get(Uri.parse(AppUrl.memeApi));
+
+  static  getRequest(String url) async {
+     final response =await http.get(Uri.parse(url));
     return response;
   }
-
 
 
   static handleResponse(http.Response response) async {
     try {
       if (response.statusCode >= 200 && response.statusCode <= 210) {
-        print("SuccessCode ${response.statusCode}");
-        print("SuccessBody ${response.body.toString()}");
+        kPrint("SuccessCode ${response.statusCode}");
+       kPrint("SuccessBody ${response.body.toString()}");
 
         if (response.body.isNotEmpty) {
           return jsonDecode(response.body);

@@ -15,19 +15,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final homeController = Get.put(HomeController());
 
-
-
-  @override
-  void initState() {
-    homeController.getMemes();
-    super.initState();
-  }
-  @override
-  void dispose() {
-    homeController.filterController.value.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /// Search Field......
+
             HomeSearchWidget(
               homeController: homeController,
             ),
@@ -52,8 +40,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
             const SizedBox(height: 10),
             Expanded(
-              child:HomeBodyWidget(homeController: homeController,)
-            ),
+                child: HomeBodyWidget(
+              homeController: homeController,
+            )),
           ],
         ),
       ),

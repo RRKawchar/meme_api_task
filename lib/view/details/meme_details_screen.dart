@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_task/components/custom_text.dart';
-import 'package:test_task/model/Meme_model.dart';
+import 'package:test_task/model/meme_model.dart';
 import 'package:test_task/view/details/widgets/details_button_widget.dart';
 import 'package:test_task/view/details/widgets/image_widget.dart';
 import 'package:test_task/view_model/controller/details_controller.dart';
@@ -25,12 +25,11 @@ class MemeDetailsScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             /// Image from home screen
 
-            ImageWidget(detailsController: detailsController, memesList: memesList),
+            ImageWidget(
+                detailsController: detailsController, memesList: memesList),
             const SizedBox(height: 20),
-
 
             /// Edit and Save button
             DetailsButtonWidget(

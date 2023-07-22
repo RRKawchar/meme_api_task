@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_task/components/custom_text.dart';
-import 'package:test_task/model/Meme_model.dart';
+import 'package:test_task/model/meme_model.dart';
 import 'package:test_task/view_model/controller/details_controller.dart';
 
 class DetailsButtonWidget extends StatelessWidget {

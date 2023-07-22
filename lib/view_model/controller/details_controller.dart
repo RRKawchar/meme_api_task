@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:test_task/core/res/utils.dart';
 
 class DetailsController extends GetxController{
 
@@ -37,26 +38,14 @@ class DetailsController extends GetxController{
   Future<void> saveImageToGallery() async {
     if (processedImageFile.value != null) {
       final result = await ImageGallerySaver.saveImage(File(processedImageFile.value!.path).readAsBytesSync());
-      print("My Result : $result");
+       kPrint("My Result : $result");
       if (result['isSuccess']) {
-        Get.snackbar(
-          "Success",
-          "Image saved to gallery",
-          snackPosition: SnackPosition.BOTTOM,
-        );
+        kSnackBar("Success", "Image saved to gallery",);
       } else {
-        Get.snackbar(
-          "Error",
-          "Failed to save image",
-          snackPosition: SnackPosition.BOTTOM,
-        );
+        kSnackBar("Error", "Failed to save image",);
       }
     } else {
-      Get.snackbar(
-        "Error",
-        "No processed image to save",
-        snackPosition: SnackPosition.BOTTOM,
-      );
+      kSnackBar("Error", "No processed image to save",);
     }
   }
 
